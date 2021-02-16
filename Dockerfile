@@ -8,11 +8,11 @@ RUN go mod download
 
 COPY . .
 
-RUN CGO_ENABLED=0 GOBIN=/app/bin go install ./...
+RUN CGO_ENABLED=0 GOBIN=/app/bin go install ./roulette
 
 FROM scratch
 COPY --from=alpine /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 COPY ./i18n ./
 COPY --from=builder /app/bin /bin
 
-ENTRYPOINT [ "/bin/roulettebot" ]
+ENTRYPOINT [ "/bin/roulette" ]
