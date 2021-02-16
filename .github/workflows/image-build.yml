@@ -21,6 +21,6 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: stek29/roulettebot/runtime:latest
+          tags: docker.pkg.github.com/stek29/roulettebot:latest
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
