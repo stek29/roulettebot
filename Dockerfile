@@ -1,4 +1,5 @@
 FROM golang:latest AS builder
+LABEL org.opencontainers.image.source https://github.com/stek29/roulettebot
 
 ENV GO111MODULE=on
 
